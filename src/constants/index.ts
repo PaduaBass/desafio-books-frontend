@@ -1,0 +1,15 @@
+export const COMMON_THEME = 'COMMON';
+export const DARK_THEME = 'DARK';
+export const ACCESS_TOKEN = '@token';
+export const BASE_URL = 'https://books.ioasys.com.br/api/v1';
+export const PUBLISHED_AT = 'Publicado em';
+export const EDITORY = 'Editora';
+export const WELCOME = 'Bem vindo, ';
+export const BOOKS = 'Books';
+export const THEME_CONTEXT_ERROR = 'ThemeContext not found';
+export const ENTRAR = 'Entrar';
+export const EMAIL = 'Email';
+export const SENHA = 'Senha';
+export const PAGE = 'Página ';
+export const OF = ' de ';
+export const COMMA = ',';
