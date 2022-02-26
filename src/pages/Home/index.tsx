@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/Logo dark.png';
 import ButtonIcon from '../../components/ButtonIcon';
 import Card from '../../components/Card';
-import Modal from '../../components/Modal';
 import { OF, PAGE, WELCOME } from '../../constants';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { useBookContext } from '../../contexts/BookContext';

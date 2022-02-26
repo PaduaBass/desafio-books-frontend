@@ -42,7 +42,7 @@ export const Row = styled.div`
 export const Title = styled.span`
   font-family: 'Heebo', sans-serif;
   font-size: 28px;
-  color: #3333;
+  color: ${({ theme }) => theme.COLORS.text_black};
 `;
 
 export const Text = styled.span<Props>`
@@ -52,9 +52,6 @@ export const Text = styled.span<Props>`
   margin-right: 8px;
   @media(max-width: 740px) {
     display: ${({ isUserName }) => isUserName ?'none' : 'bloxk'};
-  }
-  strong {
-
   }
 `;
 

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { THEME_CONTEXT_ERROR } from '../constants';
 import { BookDTO } from '../dtos';
 import api from '../services/api';
 
@@ -34,7 +35,7 @@ const BookContextProvider: React.FC = ({ children }) => {
 
 const useBookContext = () => {
   const context = useContext(BookContext);
-  if (!context) throw new Error('Book context not found');
+  if (!context) throw new Error(THEME_CONTEXT_ERROR);
   return context;
 }
 

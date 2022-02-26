@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const InputText = styled.input`
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.32);
+  background-color: ${({ theme }) => theme.COLORS.input_background};
   border-radius: 4px;
   padding: 15px;
   margin-bottom: 16px;
-  color: #fff;
+  color: ${({ theme }) => theme.COLORS.text_white};
   font-size: 16px;
   outline: 0px;
   padding-right: 120px;
@@ -30,7 +30,7 @@ export const ButtonSubmit = styled.button`
   left: 265px;
   top: 25px;
   border-radius: 44px;
-  color: #B22E6F;
+  color: ${({ theme }) => theme.COLORS.button_submit_color};
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
@@ -49,7 +49,7 @@ export const ButtonSubmit = styled.button`
 export const AlertError = styled.div`
   width: 239px;
   height: 48px;
-  background: rgba(255, 255, 255, 0.4);
+  background: ${({ theme }) => theme.COLORS.alert_background};
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@ export const AlertError = styled.div`
     position: absolute;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 10px solid ${({ theme }) => theme.COLORS.alert_background};
     left: 15px;
     top: 79px;
 }

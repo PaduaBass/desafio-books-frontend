@@ -5,13 +5,13 @@ export const Container = styled.div`
   margin-right: 15px;
   height: 160px;
   display: flex;
-  background: #FFFFFF;
-  box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
+  background: ${({ theme }) => theme.COLORS.text_white};
+  box-shadow: 0px 6px 24px ${({ theme }) => theme.COLORS.card_shadow_color};
   border-radius: 4px;
   transition: background 300ms;
   :hover {
     cursor: pointer;
-    background: #f2f2f2;
+    background: ${({ theme }) => theme.COLORS.gray};
     transform: tranlateY(10px);
   }
 
@@ -52,7 +52,7 @@ export const TitleBook = styled.span`
 export const AuthorBook = styled.p`
   font-size: 12px;
   line-height: 20px;
-  color: #AB2680;
+  color: ${({ theme }) => theme.COLORS.text_purple};
 `;
 
 export const Column = styled.div`
@@ -66,7 +66,7 @@ export const Column = styled.div`
   ::-webkit-scrollbar {
     width: 0px;
     height: 10px;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.COLORS.text_white};
   }
 `;
 
@@ -74,5 +74,5 @@ export const InfoArea = styled.div``;
 
 export const SimpleText = styled.p`
   font-size: 12px;
-  color: #999;
+  color: ${({ theme }) => theme.COLORS.text_color_gray};
 `;

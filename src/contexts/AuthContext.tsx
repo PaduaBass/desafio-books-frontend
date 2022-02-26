@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { ACCESS_TOKEN, ACCESS_USER } from '../constants';
+import { ACCESS_TOKEN, ACCESS_USER, THEME_CONTEXT_ERROR } from '../constants';
 import { UserDTO } from '../dtos';
 import api from '../services/api';
 
@@ -53,7 +53,7 @@ const AuthContextProvider: React.FC = ({ children }) => {
 
 export const useAuthContext = () => {
   const context = useContext(AuthContext);
-  if(!context) throw new Error('Auth context not found');
+  if(!context) throw new Error(THEME_CONTEXT_ERROR);
   return context;
 }
 

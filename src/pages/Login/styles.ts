@@ -37,15 +37,15 @@ export const Row = styled.div`
    flex-direction: row;
    animation: bounce 2s;
    @keyframes bounce {
-    from {
-        transform: translateY(-15px);
-        opacity: 0;
+     from {
+       transform: translateY(-15px);
+       opacity: 0;
+     }
+     to {
+       transform: translateY(0px)
+       opacity: 1;
+      }
     }
-    to {
-        transform: translateY(0px)
-        opacity: 1;
-  }
-}
 `;
 
 export const Logo = styled.img`
@@ -56,19 +56,20 @@ export const Logo = styled.img`
 
 export const Title = styled.span`
   font-size: 28px;
-  color: #fff;
+  color: ${({ theme }) => theme.COLORS.text_white};
 `;
 
 export const InputArea = styled.div`
     margin-top: 50px;
     animation: invertedBounce 1.5s;
     @keyframes invertedBounce {
-        from {
-            transform: translateY(15px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0px);
-            opacity: 1;
+      from {
+        transform: translateY(15px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
     }
 `;

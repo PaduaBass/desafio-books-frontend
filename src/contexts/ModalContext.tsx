@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import Modal from '../components/Modal';
+import { THEME_CONTEXT_ERROR } from '../constants';
 import { BookDTO } from '../dtos';
 
 interface ModalContextProps {
@@ -24,7 +25,7 @@ const ModalContextProvider: React.FC = ({ children }) => {
 
 const useContextModal = () => {
   const context = useContext(ContextModal);
-  if (!context) throw new Error('Modal Context Not Found');
+  if (!context) throw new Error(THEME_CONTEXT_ERROR);
   return context;
 } 
 

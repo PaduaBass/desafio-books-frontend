@@ -20,7 +20,6 @@ const Modal: React.FC<Props> = ({ book, close }) => {
     authors,
     title,
     pageCount,
-    category,
     description,
     isbn10,
     isbn13,

@@ -6,7 +6,7 @@ interface Props {
 
 export const ContainerBackground = styled.div<Props>`
   position: absolute;
-  background: rgba(0, 0, 0, 0.2);
+  background: ${({ theme }) => theme.COLORS.modal_background};
   width: 100%;
   height: 100%;
   top: 0;
@@ -14,18 +14,18 @@ export const ContainerBackground = styled.div<Props>`
   animation: ${({ dismount }) => dismount ? 'animateOpacityOut' : 'animateOpacityIn'} 600ms;
   @keyframes animateOpacityIn {
     from {
-        opacity: 0;
+      opacity: 0;
     }
     to {
-        opacity: 1;
+      opacity: 1;
     }
   }
   @keyframes animateOpacityOut {
     from {
-        opacity: 1;
+      opacity: 1;
     }
     to {
-        opacity: 0;
+      opacity: 0;
     }
   }
 `;
@@ -50,11 +50,11 @@ export const Container = styled.div`
 export const ContentGrid = styled.div<Props>`
   width: 769px;
   height: 608px;
-  box-shadow: 0px 16px 80px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 16px 80px ${({ theme }) => theme.COLORS.input_background};
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 4px;
-  background: #fff;
+  background: ${({ theme }) => theme.COLORS.text_white};
   padding: 48px;
   animation: ${({ dismount }) => dismount ? 'animateOpacityOut' : 'invertedBounce'} 600ms;
   @media(max-width: 780px) {
@@ -77,7 +77,7 @@ export const TitleBook = styled.span`
 export const AuthorBook = styled.p`
   font-size: 12px;
   line-height: 20px;
-  color: #AB2680;
+  color: ${({ theme }) => theme.COLORS.text_purple};
 `;
 
 export const Text = styled.p`
@@ -126,7 +126,7 @@ export const AreaText = styled.div`
   ::-webkit-scrollbar {
     width: 0px;
     height: 10px;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.COLORS.text_white};
   }
 `;
 
@@ -141,7 +141,7 @@ export const BookLogo = styled.img`
 `;
 
 export const Bar = styled.div`
-  background: #AB2680;
+  background: ${({ theme }) => theme.COLORS.text_purple};
   border-radius: 30px;
   width: 4px;
   height: 48px;
@@ -162,10 +162,10 @@ export const TableArea = styled.div`
   section {
     margin-top: 10px;
     strong {
-        font-size: 12px;
+      font-size: 12px;
     }
     p {
-        font-size: 12px;
+      font-size: 12px;
     }
   }
 `;
@@ -177,7 +177,7 @@ export const ReviewArea = styled.div`
 export const ReviewText = styled.span`
   margin-top: 20px;
   padding-bottom: 20px;
-  color: #9999;
+  color: ${({ theme }) => theme.COLORS.text_color_gray};
 `;
 
 export const RowTable = styled.div`

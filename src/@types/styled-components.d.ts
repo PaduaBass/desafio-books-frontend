@@ -1,4 +1,5 @@
-import theme from './index';
+/* eslint-disable @typescript-eslint/no-empty-interface */
+import { theme } from "../themes";
 
 type ThemeType = typeof theme;
 
