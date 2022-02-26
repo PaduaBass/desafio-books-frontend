@@ -19,7 +19,9 @@ const Home: React.FC = () => {
   }, []);
 
   const loadBooks = (pageTo: number) => {
-    getBooks(pageTo);
+    if (pageTo >= 1 && pageTo <= totalPages) {
+      getBooks(pageTo);
+    }
   };
   const handleLogout = () => {
     logout();

@@ -1,14 +1,12 @@
 import React from 'react';
 import logo from '../../assets/Logo.png';
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import Input from '../../components/Input';
-import { EMAIL, SENHA } from '../../constants/labels';
 import * as S from './styles';
-import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/AuthContext';
+import { EMAIL, SENHA } from '../../constants';
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
   const { login, error } = useAuthContext();
   
   const formik = useFormik({

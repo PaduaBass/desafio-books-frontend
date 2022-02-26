@@ -1,6 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
-import { ERROR_SIGN_IN } from '../../constants';
-import { ENTRAR } from '../../constants/labels';
+import { ERROR_SIGN_IN, ENTRAR } from '../../constants';
 import * as S from './styles';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {

@@ -1,7 +1,5 @@
 import React from 'react';
-
 import * as S from './styles';
-import book from '../../assets/Book.png';
 import { BookDTO } from '../../dtos';
 import imgNotFound from '../../assets/image-not-found.png';
 import { COMMA, EDITORY, PAGES, PUBLISHED_AT } from '../../constants';
@@ -30,7 +28,6 @@ const Card: React.FC<Props> = ({ onPress, book }) => {
             </S.AuthorBook>
           ))}
         </S.InfoArea>
-
       <S.InfoArea>
         <S.SimpleText>{`${pageCount} ${PAGES}`}</S.SimpleText>
         <S.SimpleText>{`${EDITORY} ${publisher}`}</S.SimpleText>
@@ -38,7 +35,6 @@ const Card: React.FC<Props> = ({ onPress, book }) => {
       </S.InfoArea>
       </S.Column>
     </S.DetailsArea>
-
   </S.Container>;
 }
 

@@ -5,17 +5,17 @@ import Home from '../pages/Home';
 import { useAuthContext } from '../contexts/AuthContext';
 
 const AppRoutes: React.FC = () => {
-    const { user } = useAuthContext();
-    return (
-        <BrowserRouter>
-            <Routes>
-                { !user ? (
-                    <Route path='/' element={<Login />} />
-                ) : (
-                    <Route path='/' element={<Home />} />
-                )}
-            </Routes>
-      </BrowserRouter>
-    )
+  const { user } = useAuthContext();
+  return (
+    <BrowserRouter>
+      <Routes>
+        {!user ? (
+          <Route path='/' element={<Login />} />
+            ) : (
+          <Route path='/' element={<Home />} />
+        )}
+      </Routes>
+    </BrowserRouter>
+  )
 };
 export default AppRoutes;
