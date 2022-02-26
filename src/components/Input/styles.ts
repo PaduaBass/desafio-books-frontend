@@ -45,3 +45,25 @@ export const ButtonSubmit = styled.button`
     left: 255px;
   }
 `;
+
+export const AlertError = styled.div`
+  width: 239px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  font-weight: bold;
+  :after{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgba(255, 255, 255, 0.4);
+    left: 15px;
+    top: 79px;
+}
+`;

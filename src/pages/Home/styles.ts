@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import background from '../../assets/1stBackground.png';
+
+interface Props {
+  isUserName?: boolean;
+  openModal?: boolean;
+}
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* width: ; */
   height: 100vh;
   background: url(${background}) no-repeat;
   background-size: cover;
@@ -41,20 +45,22 @@ export const Title = styled.span`
   color: #3333;
 `;
 
-export const Text = styled.span`
+export const Text = styled.span<Props>`
   font-size: 12px;
   line-height: 16px;
   weight: 500;
   margin-right: 8px;
+  @media(max-width: 740px) {
+    display: ${({ isUserName }) => isUserName ?'none' : 'bloxk'};
+  }
   strong {
 
   }
 `;
 
-export const Grid = styled.div`
+export const Grid = styled.div<Props>`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr 1fr 1fr;
   width: 100%;
   height: 530px;
   margin-top: 42px;
@@ -64,15 +70,18 @@ export const Grid = styled.div`
     grid-template-columns: repeat(3, 1fr);
     height: 800px;
     gap: 40px;
+    overflow: ${({ openModal }) => openModal ? 'hidden' : 'visible'};
   }
   @media(max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
     height: 10220px;
+    overflow: ${({ openModal }) => openModal ? 'hidden' : 'visible'};
   }
   @media(max-width: 740px) {
     grid-template-columns: 1fr;
     height: 3095px;
-    padding-left: 25%;
+    padding-left: 18%;
+    overflow: ${({ openModal }) => openModal ? 'hidden' : 'visible'};
   }
 `;
 
@@ -84,4 +93,7 @@ export const NavigationArea = styled.div`
   justify-content: right;
   margin-top: 10px;
   align-items: center;
+  @media(max-width: 780px) {
+    justify-content: center;
+  }
 `;

@@ -3,7 +3,6 @@ import background from '../../assets/Background.png';
 export const Container = styled.div`
   display: flex;
   flex: 1;
-  /* width: ; */
   height: 100vh;
   background: url(${background}) no-repeat;
   background-size: cover;
@@ -26,11 +25,11 @@ export const Content = styled.div`
     margin-left: 115px;
 
     @media (max-width: 600px) {
-      width: 100%;
-      margin: 0px 20px;
-      height: 224px;
+      margin-left: 80px;
     }
-
+    @media (max-width: 474px) {
+      margin-left: 40px;
+    }
 `;
 
 export const Row = styled.div`
@@ -56,7 +55,6 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled.span`
-  font-family: 'Heebo', sans-serif;
   font-size: 28px;
   color: #fff;
 `;
@@ -72,6 +70,5 @@ export const InputArea = styled.div`
         to {
             transform: translateY(0px);
             opacity: 1;
-
     }
 `;

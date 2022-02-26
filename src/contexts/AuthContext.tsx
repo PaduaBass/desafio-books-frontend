@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState } from 'react';
-import { ACCESS_TOKEN } from '../constants';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { ACCESS_TOKEN, ACCESS_USER } from '../constants';
 import { UserDTO } from '../dtos';
 import api from '../services/api';
 
@@ -21,11 +21,21 @@ const AuthContextProvider: React.FC = ({ children }) => {
         email,
         password,
       });
+      await localStorage.setItem(ACCESS_USER, JSON.stringify(data));
       data.token = headers.authorization;
       await localStorage.setItem(ACCESS_TOKEN, data.token);
+
       setUser(data);
     } catch(e) {
       setError(true);
+    }
+  }
+
+  const autoLogin = async () => {
+    const dataUser = await localStorage.getItem(ACCESS_USER);
+    if (dataUser) {
+      const user = await JSON.parse(dataUser);
+      setUser(user);
     }
   }
 
@@ -33,6 +43,10 @@ const AuthContextProvider: React.FC = ({ children }) => {
     await localStorage.clear();
     setUser(null);
   }
+
+  useEffect(() => {
+    autoLogin();
+  }, []);
 
   return <AuthContext.Provider value={{ user, login, error, logout }}>{ children }</AuthContext.Provider>;
 }

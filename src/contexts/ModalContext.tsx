@@ -1,18 +1,25 @@
 import React, { createContext, useContext, useState } from 'react';
+import Modal from '../components/Modal';
+import { BookDTO } from '../dtos';
 
 interface ModalContextProps {
   openModal: boolean;
-  toggleModal: () => void;
+  toggleModal: (book: BookDTO | null) => void;
 }
 
 const ContextModal = createContext<ModalContextProps>({} as ModalContextProps);
 
 const ModalContextProvider: React.FC = ({ children }) => {
   const [openModal, setOpenModal] = useState(false);
-  const toggleModal = () => {
-      setOpenModal(!openModal);
+  const [book, setBook] = useState<BookDTO | null>(null);
+  const toggleModal = (book: BookDTO | null) => {
+    setOpenModal(!openModal);
+    setBook(book);
   }
-  return <ContextModal.Provider value={{ openModal, toggleModal }}>{ children }</ContextModal.Provider>;
+  return <ContextModal.Provider value={{ openModal, toggleModal }}>
+    { openModal && book && <Modal book={book} />}
+    { children }
+  </ContextModal.Provider>;
 }
 
 const useContextModal = () => {

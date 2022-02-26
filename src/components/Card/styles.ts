@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 283px;
+  width: 290px;
   margin-right: 15px;
   height: 160px;
-  overflow: scroll;
-  overflow-x: hidden;
-
   display: flex;
   background: #FFFFFF;
   box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
@@ -17,11 +14,7 @@ export const Container = styled.div`
     background: #f2f2f2;
     transform: tranlateY(10px);
   }
-  ::-webkit-scrollbar {
-    width: 0px;
-    height: 10px;
-    background-color: #fff;
-    }
+
   @media(max-width: 740px) {
     width: 288px;
   }
@@ -66,11 +59,19 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 125px;
+  height: 121px;
+  margin-top: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 10px;
+    background-color: #fff;
+  }
 `;
 
-export const InfoArea = styled.div`
-`;
+export const InfoArea = styled.div``;
+
 export const SimpleText = styled.p`
   font-size: 12px;
   color: #999;

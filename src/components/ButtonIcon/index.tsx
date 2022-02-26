@@ -3,7 +3,7 @@ import { MdLogout } from 'react-icons/md';
 import { iconList } from '../../util';
 import * as S from './styles';
 interface Props {
-  type: 'logout' | 'left' | 'right';
+  type: 'logout' | 'left' | 'right' | 'close';
   onPress?: () => void;
 }
 const ButtonIcon: React.FC<Props> = ({ type, onPress }) => {

@@ -42,8 +42,8 @@ const Login: React.FC = () => {
                 value={formik.values.password} 
                 onChange={formik.handleChange}
                 type='password'
+                error={error}
               />
-              {error && <S.Title>Email ou senha Invalidos</S.Title>}
           </S.InputArea>
       </S.Content>
   </S.Container>;

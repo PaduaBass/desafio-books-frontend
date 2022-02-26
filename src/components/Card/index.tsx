@@ -4,7 +4,8 @@ import * as S from './styles';
 import book from '../../assets/Book.png';
 import { BookDTO } from '../../dtos';
 import imgNotFound from '../../assets/image-not-found.png';
-import { COMMA, PUBLISHED_AT } from '../../constants';
+import { COMMA, EDITORY, PAGES, PUBLISHED_AT } from '../../constants';
+import { useContextModal } from '../../contexts/ModalContext';
 interface Props {
   onPress?: () => void;
   book: BookDTO;
@@ -12,7 +13,9 @@ interface Props {
 
 const Card: React.FC<Props> = ({ onPress, book }) => {
   const { imageUrl, authors, title, pageCount, publisher, published } = book;
-  return <S.Container onClick={() => onPress ? onPress() : null}>
+  const { toggleModal } = useContextModal();
+
+  return <S.Container onClick={() => onPress ? onPress() : toggleModal(book)}>
     <S.ImageArea>
       <S.BookLogo src={ imageUrl ? `${imageUrl}` : imgNotFound} />
     </S.ImageArea>
@@ -29,9 +32,9 @@ const Card: React.FC<Props> = ({ onPress, book }) => {
         </S.InfoArea>
 
       <S.InfoArea>
-        <S.SimpleText>{pageCount} páginas</S.SimpleText>
-        <S.SimpleText>{PUBLISHED_AT}{publisher}</S.SimpleText>
-        <S.SimpleText>Publicado em {published}</S.SimpleText>
+        <S.SimpleText>{`${pageCount} ${PAGES}`}</S.SimpleText>
+        <S.SimpleText>{`${EDITORY} ${publisher}`}</S.SimpleText>
+        <S.SimpleText>{`${PUBLISHED_AT}${published}`}</S.SimpleText>
       </S.InfoArea>
       </S.Column>
     </S.DetailsArea>
