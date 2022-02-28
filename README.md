@@ -17,7 +17,7 @@
   - [Styled-Components](https://styled-components.com/docs/basics):
     É uma biblioteca CSS-in-JS que é de código aberto e permite que você, como um desenvolvedor React Native, defina um componente e estilos de IU em um único local de arquivo. Torna-se fácil combinar o estilo com seu componente adequado, o que pode resultar em uma experiência de desenvolvedor otimizada ao trabalhar com grandes aplicativos.
 
-  - [react--icons](https://react-icons.github.io/react-icons/):
+  - [react-icons](https://react-icons.github.io/react-icons/):
     Utilizado para adicionar ícones na aplicação.
 
   - [Formik](https://formik.org/docs/guides/react-native):
